@@ -1,0 +1,9 @@
+check,result,status,notes
+Duplicate route keys,0,Pass,"0 duplicate (origin, dest) pairs; one row cleanly represents one route."
+Missing key values,0,Pass,0 missing values in origin or dest key columns.
+Missing ABT cells,25,Documented,"Missing cells are limited to US territory airport metadata from the airports join (SJU, BQN, PSE, STT) and delay/air_time metrics on the 100%-cancelled LGA-LEX route; documented in the data dictionary."
+"Nonpositive flight counts, distances and air times",0,Pass,"All routes have positive flight counts, distances, and non-null air times."
+Routes with a negative max_arr_delay,4,Documented,Valid early arrivals on low-volume/single-flight routes rather than data errors; documented in max_arr_delay notes.
+Missing target values,1,Documented,1 route (LGA-LEX) has a missing target because its only scheduled flight was cancelled; documented in avg_arr_delay notes.
+ABT columns without a dictionary row,0,Pass,All 11 ABT columns have a matching row in the data dictionary.
+Blank dictionary cells,0,Pass,"All description, source, transformation, and notes fields are populated across all 11 columns."
